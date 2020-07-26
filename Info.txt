@@ -1,0 +1,10 @@
+Upload a zip file in the format Assignment02_<group number>.zip
+Your zip file should contain,
+
+->Executable codes without runtime errors (name each of the executable code with the question number. eg:Q1,Q2,Q3)
+->Report elaborating the Greedy component in each question and the approach you have taken to solve it.
+->Document including index numbers of all the group members
+
+Each of your programs should take standard keyboard inputs and give standard console outputs in the given format. 
+
+Important: Plagiarism a serious offense and the students caught plagiarizing are given zero marks
