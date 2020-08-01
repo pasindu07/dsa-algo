@@ -21,16 +21,11 @@ int main()
   double maxval = 0;
   int number_of_barrels,total_bottels_in_barrel=0; //No. of Barrels in wine yard
 
-
   cin >> number_of_bottels >> number_of_barrels;
-
-  // cout << "Enter the No. of barrels available in wine yard : ";
 
   int bottles_per_barrel[number_of_barrels] = {};
   int value[number_of_barrels] = {};
   int vdensity[number_of_barrels] = {};
-
-  // cout << "Enter the No. of bottles in each barrel :";
 
   for (int i = 0; i < number_of_barrels; i++)
   {
@@ -38,8 +33,6 @@ int main()
     bottles_per_barrel[i] = ib;
     total_bottels_in_barrel+=ib;
   }
-
-  // cout << "\nEnter the corresponding price of each barrel : ";
 
   for (int i = 0; i < number_of_barrels; i++)
   {
@@ -56,7 +49,7 @@ if(number_of_bottels<total_bottels_in_barrel){
   }
 
   int k = 0;
-  while (true)
+  while (true)//rearranging position,value per bottle and bottles per barrel according to descending order
   {
     pos = largestNum(vdensity, number_of_barrels);
 
@@ -72,10 +65,11 @@ if(number_of_bottels<total_bottels_in_barrel){
     }
   }
 
-  // double x[number_of_barrels] = {};
+  
   int i=0;
   int bag = 0;
 
+//getting bottles accordingly
   while(bag!=number_of_bottels && i!=number_of_barrels){
 
     if(bag+new_bottle_arrange[i]<=number_of_bottels){
@@ -89,37 +83,6 @@ if(number_of_bottels<total_bottels_in_barrel){
     }
     i++;
   }
-
-/*
-  while (cur_b < number_of_bottels)
-  {
-    for (int i = 0; i < number_of_barrels; i++)
-    {
-      if (cur_b + bottles_per_barrel[posvec[i]] <= number_of_bottels)
-      {
-        x[posvec[i]] = 1;
-        cur_b = cur_b + bottles_per_barrel[posvec[i]];
-      }
-      else
-      {
-        x[posvec[i]] = ((number_of_bottels - cur_b) / bottles_per_barrel[posvec[i]]);
-        cur_b = number_of_bottels;
-      }
-    }
-  }
-  
-
-  //To calculate the values of items in th knapsack
-  double y = 0;
-  for (int i = 0; i < number_of_barrels; i++)
-  {
-    if (x[i] != 0)
-    {
-      y = x[i] * value[i];
-      maxval = maxval + y;
-    }
-  }
-  */
 }
 
 else{
