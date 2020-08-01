@@ -11,7 +11,8 @@ int main()
 {
 
   vector<int> posvec;
-  vector<int> newvec;
+  vector<int> newval;
+  vector<int> new_bottle_arrange;
 
   int number_of_bottels; //No of. bottles Sandun carried
   int ib;
@@ -48,6 +49,7 @@ int main()
 
 //calculating the value per bottle
 if(number_of_bottels<total_bottels_in_barrel){
+
   for (int i = 0; i < number_of_barrels; i++)
   {
     vdensity[i] = (value[i] / bottles_per_barrel[i]);
@@ -60,7 +62,8 @@ if(number_of_bottels<total_bottels_in_barrel){
 
     posvec.push_back(pos);
     k++;
-    newvec.push_back(vdensity[pos]);
+    newval.push_back(vdensity[pos]);
+    new_bottle_arrange.push_back(bottles_per_barrel[pos]);
     vdensity[pos] = -1;
 
     if (k == number_of_barrels)
@@ -69,9 +72,25 @@ if(number_of_bottels<total_bottels_in_barrel){
     }
   }
 
-  double x[number_of_barrels] = {};
-  double cur_b = 0;
+  // double x[number_of_barrels] = {};
+  int i=0;
+  int bag = 0;
 
+  while(bag!=number_of_bottels && i!=number_of_barrels){
+
+    if(bag+new_bottle_arrange[i]<=number_of_bottels){
+      bag += new_bottle_arrange[i];
+      maxval += newval[i]*new_bottle_arrange[i];
+    }
+
+    else{
+      maxval += (number_of_bottels-bag)*newval[i];
+      bag += (number_of_bottels-bag);
+    }
+    i++;
+  }
+
+/*
   while (cur_b < number_of_bottels)
   {
     for (int i = 0; i < number_of_barrels; i++)
@@ -88,6 +107,7 @@ if(number_of_bottels<total_bottels_in_barrel){
       }
     }
   }
+  
 
   //To calculate the values of items in th knapsack
   double y = 0;
@@ -99,6 +119,7 @@ if(number_of_bottels<total_bottels_in_barrel){
       maxval = maxval + y;
     }
   }
+  */
 }
 
 else{
