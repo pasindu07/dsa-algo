@@ -5,18 +5,18 @@
 
 using namespace std;
 
-int largestNum(int num[], int n);
+int largestNum(double num[], int);
 
 int main()
 {
 
   vector<int> posvec;
-  vector<int> newval;
+  vector<double> newval;
   vector<int> new_bottle_arrange;
 
   int number_of_bottels; //No of. bottles Sandun carried
   int ib;
-  int val;
+  double val;
   int pos;
   double maxval = 0;
   int number_of_barrels,total_bottels_in_barrel=0; //No. of Barrels in wine yard
@@ -24,8 +24,8 @@ int main()
   cin >> number_of_bottels >> number_of_barrels;
 
   int bottles_per_barrel[number_of_barrels] = {};
-  int value[number_of_barrels] = {};
-  int vdensity[number_of_barrels] = {};
+  double value[number_of_barrels] = {};
+  double vdensity[number_of_barrels] = {};
 
   for (int i = 0; i < number_of_barrels; i++)
   {
@@ -68,6 +68,12 @@ if(number_of_bottels<total_bottels_in_barrel){
   
   int i=0;
   int bag = 0;
+  
+  while(i<3){
+      cout << newval[i] << " ";
+      i++;
+  }
+  i=0;
 
 //getting bottles accordingly
   while(bag!=number_of_bottels && i!=number_of_barrels){
@@ -96,10 +102,10 @@ else{
   return 0;
 }
 
-int largestNum(int num[], int number_of_barrels)
+int largestNum(double num[], int number_of_barrels)
 {
   //Finding the max Digit
-  int tmp = 0;
+  double tmp = 0;
   int p = 0;
   for (int i = 0; i < number_of_barrels; i++)
   {
