@@ -69,12 +69,6 @@ if(number_of_bottels<total_bottels_in_barrel){
   int i=0;
   int bag = 0;
   
-  while(i<3){
-      cout << newval[i] << " ";
-      i++;
-  }
-  i=0;
-
 //getting bottles accordingly
   while(bag!=number_of_bottels && i!=number_of_barrels){
 
