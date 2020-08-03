@@ -3,7 +3,6 @@
 #include <algorithm>
 using namespace std;
 
-int allocate_masks(int,int,vector<int>);
 
 
 int main(){
