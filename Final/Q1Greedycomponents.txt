@@ -28,4 +28,20 @@ SET bag = 0
 WHILE(bag!=bottles_sandun_brought and i!=number_of_barrels)
 i = index of best price per bottle
 
-If(bag +
+If(bag + new_bottles_arrange[i]<=bottles_sandun_brought):
+bag += new_bottles_arrange[i]
+maxVal += newval_barrel[i]*new_bottles_arrange[i]
+
+ELSE
+
+ maxval += (bottles_sandun_brought-bag)*newval_barrel[i];
+      bag += (bottles_sandun_brought-bag);
+END IF
+i++
+END WHILE
+
+Solution Function:
+
+Once the Sandun's bottle are filled from the barrels descending from highest price per bottle, Maximum value 
+of wine that Sandun gets from this deal can be determined.
+
