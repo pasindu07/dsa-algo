@@ -1,0 +1,47 @@
+Candidate set:
+Barrels in the wine yard
+
+Initialized an array to include the volume of each barrel in bottles.
+
+Selection Function:
+From the given set of barrels in the wine yard, the barrel with the highest value density(price per bottle) is taken as the best choice
+where sandun can start filling the bottles he has brought.
+
+Price per botttle in each barrel was calculated by dividing each element of the array containing price of each barrel from the corresponding
+element of the array containing the volume of barrels(in bottles).
+
+Then the barrel with the highest price per bottle was sorted out.
+
+Feasibility function:
+
+First Sandun can fill the bottles he has got, from the barrel with highest price per bottle. If he gets more bottles remianing to be filled,
+he can fill them from the barrel with the next highest price per bottle. This process is followed until every bottle is filled. 
+As said we asssure that sandun won't  fill any of the bottles with more than one type of wine.
+
+Objective Function:
+Once the barrel with highest price per bottle is sorted out, Sandun can fill the bottles he got starting from that particular barrel.
+
+Pseudo code:
+maxValWine(new_bottles_arrange[i..n], newval_barrel[i..n],bottles_sandun_brought, number_of_barrels) :
+SET i =0
+SET bag = 0
+WHILE(bag!=bottles_sandun_brought and i!=number_of_barrels)
+i = index of best price per bottle
+
+If(bag + new_bottles_arrange[i]<=bottles_sandun_brought):
+bag += new_bottles_arrange[i]
+maxVal += newval_barrel[i]*new_bottles_arrange[i]
+
+ELSE
+
+ maxval += (bottles_sandun_brought-bag)*newval_barrel[i];
+      bag += (bottles_sandun_brought-bag);
+END IF
+i++
+END WHILE
+
+Solution Function:
+
+Once the Sandun's bottle are filled from the barrels descending from highest price per bottle, Maximum value 
+of wine that Sandun gets from this deal can be determined.
+
