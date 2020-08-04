@@ -31,10 +31,7 @@ for(int i=0,j=1;j<=num_students;i++,j++){
     else if(scores[i]<scores[j]){
         mask_alloc.push_back(mask_alloc[i]+1);
     }
-    else if(scores[i]==scores[j]){
-        mask_alloc.push_back(mask_alloc[i]);
-    }
-    else
+    else //scores[i]>=scores[j]
         mask_alloc.push_back(1);
     
 }
